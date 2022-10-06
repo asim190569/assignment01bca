@@ -20,15 +20,15 @@ type Block struct {
 	currHash    string
 }
 
+type Blockchain struct {
+	list []*Block
+}
+
 func Newblock(nonce int, transaction string) *Block {
 	sk := new(Block)
 	sk.nonce = nonce
 	sk.transaction = transaction
 	return sk
-}
-
-type Blockchain struct {
-	list []*Block
 }
 
 func (ls *Blockchain) Addblock(nonce int, transaction string) *Block {
